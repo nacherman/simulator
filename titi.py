@@ -937,46 +937,6 @@ class ResistorSimulator:
                     stack.append(wire["start"])
         return connected
 
-  class ResistorSimulator:
-    # Existing methods...
-
-    def simulate_with_spice(self):
-        if not os.path.exists(ngspice_executable_path):
-            messagebox.showerror("SPICE Fehler", f"NGSpice nicht gefunden unter: {ngspice_executable_path}")
-            log_message(f"Fehler: NGSpice nicht gefunden unter {ngspice_executable_path}")
-            return {}
-        if not self.components and not self.ohmmeters and not self.meters:
-            messagebox.showerror("SPICE Fehler", "Keine Komponenten zum Simulieren vorhanden.")
-            log_message("Fehler: Keine Komponenten zum Simulieren vorhanden.")
-            return {}
-        if not self.grounds:
-            messagebox.showerror("SPICE Fehler", "Bitte füge ein GND (Masse) hinzu.")
-            log_message("Fehler: Keine Masse (GND) vorhanden.")
-            return {}
-
-        results = {}
-        output_file = "simulation_results.txt"
-
-        # Ohmmeter-Simulation
-        if self.ohmmeters:
-            for ohm in self.ohmmeters:
-                circuit, node_map = self.generate_spice_netlist(measure_mode=True, active_ohmmeter=ohm)
-                netlist_file = f"temp_ohm_{ohm.name}.cir"
-                with open(netlist_file, "w", encoding="utf-8") as f:
-                    f.write(str(circuit))
-                    all_nodes = set(node_map.values()) - {"0"}
-                    nodes_str = " ".join([f"v({node})" for node in all_nodes])
-                    f.write(f"\n.op\n.control\nset noaskquit\nop\nprint {nodes_str} > {output_file}\nedisplay\n.endc\n.end\n")
-                try:
-                    log_message(f"Simuliere Ohmmeter {ohm.name} mit Netzliste {netlist_file}")
-                    process = subprocess.run([ngspice_executable_path, "-b", netlist_file], check=True, text=True, capture_output=True, timeout=30)
-                    log_message(f"NGSpice stdout:\n{process.stdout}")
-                    log_message(f"NGSpice stderr:\n{process.stderr}")
-                    if os.path.exists(output_file):
-                        with open(output_file, "r", encoding="utf-8") as f:
-                            content = f.read()
-                            log_message(f"Inhalt von {output_file} für Ohmmeter {ohm.name}:\n{content}")
-                            voltages = {}
                             for line in content.splitlines():
                                 if "=" in line:
                                     key, value = line.split("=")
@@ -1052,13 +1012,7 @@ class ResistorSimulator:
                     log_message(f"Ausgabedatei {output_file} nicht gefunden für Messgeräte")
             except subprocess.CalledProcessError as e:
                 log_message(f"Fehler bei Messgeräte-Simulation: {e.stderr}")
-                messagebox.showerror("Simulationsfehler", f"Messgeräte-Simulation fehlgeschlagen:\n{e.stderr}")
-            finally:
-                for fname in [netlist_file, output_file]:
-                    if os.path.exists(fname):
-                        os.remove(fname)
-
-        return results
+                messagebox.showerror("Simulationsfehler", f"Messgeräte-Simulation fehlgesc
 
     def calculate_resistance(self, term1, term2):
         node_map = self.generate_node_map()
