@@ -937,125 +937,128 @@ class ResistorSimulator:
                     stack.append(wire["start"])
         return connected
 
-   def simulate_with_spice(self):
-    if not os.path.exists(ngspice_executable_path):
-        messagebox.showerror("SPICE Fehler", f"NGSpice nicht gefunden unter: {ngspice_executable_path}")
-        log_message(f"Fehler: NGSpice nicht gefunden unter {ngspice_executable_path}")
-        return {}
-    if not self.components and not self.ohmmeters and not self.meters:
-        messagebox.showerror("SPICE Fehler", "Keine Komponenten zum Simulieren vorhanden.")
-        log_message("Fehler: Keine Komponenten zum Simulieren vorhanden.")
-        return {}
-    if not self.grounds:
-        messagebox.showerror("SPICE Fehler", "Bitte füge ein GND (Masse) hinzu.")
-        log_message("Fehler: Keine Masse (GND) vorhanden.")
-        return {}
+  class ResistorSimulator:
+    # Existing methods...
 
-    results = {}
-    output_file = "simulation_results.txt"
+    def simulate_with_spice(self):
+        if not os.path.exists(ngspice_executable_path):
+            messagebox.showerror("SPICE Fehler", f"NGSpice nicht gefunden unter: {ngspice_executable_path}")
+            log_message(f"Fehler: NGSpice nicht gefunden unter {ngspice_executable_path}")
+            return {}
+        if not self.components and not self.ohmmeters and not self.meters:
+            messagebox.showerror("SPICE Fehler", "Keine Komponenten zum Simulieren vorhanden.")
+            log_message("Fehler: Keine Komponenten zum Simulieren vorhanden.")
+            return {}
+        if not self.grounds:
+            messagebox.showerror("SPICE Fehler", "Bitte füge ein GND (Masse) hinzu.")
+            log_message("Fehler: Keine Masse (GND) vorhanden.")
+            return {}
 
-    # Ohmmeter-Simulation
-    if self.ohmmeters:
-        for ohm in self.ohmmeters:
-            circuit, node_map = self.generate_spice_netlist(measure_mode=True, active_ohmmeter=ohm)
-            netlist_file = f"temp_ohm_{ohm.name}.cir"
+        results = {}
+        output_file = "simulation_results.txt"
+
+        # Ohmmeter-Simulation
+        if self.ohmmeters:
+            for ohm in self.ohmmeters:
+                circuit, node_map = self.generate_spice_netlist(measure_mode=True, active_ohmmeter=ohm)
+                netlist_file = f"temp_ohm_{ohm.name}.cir"
+                with open(netlist_file, "w", encoding="utf-8") as f:
+                    f.write(str(circuit))
+                    all_nodes = set(node_map.values()) - {"0"}
+                    nodes_str = " ".join([f"v({node})" for node in all_nodes])
+                    f.write(f"\n.op\n.control\nset noaskquit\nop\nprint {nodes_str} > {output_file}\nedisplay\n.endc\n.end\n")
+                try:
+                    log_message(f"Simuliere Ohmmeter {ohm.name} mit Netzliste {netlist_file}")
+                    process = subprocess.run([ngspice_executable_path, "-b", netlist_file], check=True, text=True, capture_output=True, timeout=30)
+                    log_message(f"NGSpice stdout:\n{process.stdout}")
+                    log_message(f"NGSpice stderr:\n{process.stderr}")
+                    if os.path.exists(output_file):
+                        with open(output_file, "r", encoding="utf-8") as f:
+                            content = f.read()
+                            log_message(f"Inhalt von {output_file} für Ohmmeter {ohm.name}:\n{content}")
+                            voltages = {}
+                            for line in content.splitlines():
+                                if "=" in line:
+                                    key, value = line.split("=")
+                                    key = key.strip()
+                                    value = float(value.strip())
+                                    voltages[key] = value
+                            n1, n2 = node_map[ohm.terminals[0]], node_map[ohm.terminals[1]]
+                            v1 = voltages.get(f"v({n1})", 0.0)
+                            v2 = voltages.get(f"v({n2})", 0.0)
+                            v_diff = abs(v1 - v2)
+                            i_test = 1.0 / 1e6  # Strom durch Testspannung bei 1MΩ
+                            r_measured = v_diff / i_test if i_test > 0 else float('inf')
+                            results[ohm.name] = {"R": r_measured}
+                            self.canvas.itemconfig(ohm.text_id, text=f"{ohm.name}\n{r_measured:.2f}Ω" if r_measured != float('inf') else f"{ohm.name}\n∞ Ω")
+                            log_message(f"Ohmmeter {ohm.name} gemessener Widerstand: {r_measured:.2f}Ω")
+                    else:
+                        log_message(f"Ausgabedatei {output_file} nicht gefunden für Ohmmeter {ohm.name}")
+                except subprocess.CalledProcessError as e:
+                    log_message(f"Fehler bei Ohmmeter-Simulation {ohm.name}: {e.stderr}")
+                    messagebox.showerror("Simulationsfehler", f"Ohmmeter {ohm.name} Simulation fehlgeschlagen:\n{e.stderr}")
+                finally:
+                    for fname in [netlist_file, output_file]:
+                        if os.path.exists(fname):
+                            os.remove(fname)
+
+        # Messgeräte-Simulation
+        if self.meters and self.sources:
+            circuit, node_map = self.generate_spice_netlist(measure_mode=False)
+            netlist_file = "temp_simulation.cir"
             with open(netlist_file, "w", encoding="utf-8") as f:
-                f.write(str(circuit))
                 all_nodes = set(node_map.values()) - {"0"}
                 nodes_str = " ".join([f"v({node})" for node in all_nodes])
-                f.write(f"\n.op\n.control\nset noaskquit\nop\nprint {nodes_str} > {output_file}\nedisplay\n.endc\n.end\n")
+                # Ströme durch Messwiderstände hinzufügen
+                currents_str = " ".join([f"V{meter.name}_probe#branch" for meter in self.meters if meter.meter_type == "ammeter"])
+                print_str = f"{nodes_str} {currents_str}".strip()
+                f.write(str(circuit))
+                f.write(f"\n.op\n.control\nset noaskquit\nop\nprint {print_str} > {output_file}\nedisplay\n.endc\n.end\n")
             try:
-                log_message(f"Simuliere Ohmmeter {ohm.name} mit Netzliste {netlist_file}")
+                log_message(f"Simuliere Messgeräte mit Netzliste {netlist_file}")
                 process = subprocess.run([ngspice_executable_path, "-b", netlist_file], check=True, text=True, capture_output=True, timeout=30)
                 log_message(f"NGSpice stdout:\n{process.stdout}")
                 log_message(f"NGSpice stderr:\n{process.stderr}")
                 if os.path.exists(output_file):
                     with open(output_file, "r", encoding="utf-8") as f:
                         content = f.read()
-                        log_message(f"Inhalt von {output_file} für Ohmmeter {ohm.name}:\n{content}")
-                        voltages = {}
+                        log_message(f"Inhalt von {output_file} für Messgeräte:\n{content}")
+                        values = {}
                         for line in content.splitlines():
                             if "=" in line:
                                 key, value = line.split("=")
                                 key = key.strip()
                                 value = float(value.strip())
-                                voltages[key] = value
-                        n1, n2 = node_map[ohm.terminals[0]], node_map[ohm.terminals[1]]
-                        v1 = voltages.get(f"v({n1})", 0.0)
-                        v2 = voltages.get(f"v({n2})", 0.0)
-                        v_diff = abs(v1 - v2)
-                        i_test = 1.0 / 1e6  # Strom durch Testspannung bei 1MΩ
-                        r_measured = v_diff / i_test if i_test > 0 else float('inf')
-                        results[ohm.name] = {"R": r_measured}
-                        self.canvas.itemconfig(ohm.text_id, text=f"{ohm.name}\n{r_measured:.2f}Ω" if r_measured != float('inf') else f"{ohm.name}\n∞ Ω")
-                        log_message(f"Ohmmeter {ohm.name} gemessener Widerstand: {r_measured:.2f}Ω")
+                                values[key] = value
+                        for meter in self.meters:
+                            n1 = node_map[meter.terminals[0]]
+                            n2 = node_map[meter.terminals[1]]
+                            v1 = values.get(f"v({n1})", 0.0)
+                            v2 = values.get(f"v({n2})", 0.0)
+                            v_th = abs(v1 - v2)
+                            if meter.meter_type == "voltmeter":
+                                self.canvas.itemconfig(meter.text_id, text=f"{meter.name}\n{v_th:.2f} V")
+                                i_n = v_th / 1e6  # Strom durch 1MΩ
+                                log_message(f"Voltmeter {meter.name}: V_th={v_th:.2f} V")
+                            elif meter.meter_type == "ammeter":
+                                i_n = values.get(f"V{meter.name}_probe#branch", 0.0)  # Direkt den Strom aus NGSpice
+                                self.canvas.itemconfig(meter.text_id, text=f"{meter.name}\n{i_n*1000:.2f} mA")
+                                log_message(f"Ammeter {meter.name}: I_n={i_n:.6e} A")
+                            else:
+                                i_n = 0
+                                log_message(f"Meter {meter.name}: V_th={v_th:.2f} V (general meter)")
+                            results[meter.text_id] = {"V_th": v_th, "I_n": i_n}
                 else:
-                    log_message(f"Ausgabedatei {output_file} nicht gefunden für Ohmmeter {ohm.name}")
+                    log_message(f"Ausgabedatei {output_file} nicht gefunden für Messgeräte")
             except subprocess.CalledProcessError as e:
-                log_message(f"Fehler bei Ohmmeter-Simulation {ohm.name}: {e.stderr}")
-                messagebox.showerror("Simulationsfehler", f"Ohmmeter {ohm.name} Simulation fehlgeschlagen:\n{e.stderr}")
+                log_message(f"Fehler bei Messgeräte-Simulation: {e.stderr}")
+                messagebox.showerror("Simulationsfehler", f"Messgeräte-Simulation fehlgeschlagen:\n{e.stderr}")
             finally:
                 for fname in [netlist_file, output_file]:
                     if os.path.exists(fname):
                         os.remove(fname)
 
-    # Messgeräte-Simulation
-    if self.meters and self.sources:
-        circuit, node_map = self.generate_spice_netlist(measure_mode=False)
-        netlist_file = "temp_simulation.cir"
-        with open(netlist_file, "w", encoding="utf-8") as f:
-            all_nodes = set(node_map.values()) - {"0"}
-            nodes_str = " ".join([f"v({node})" for node in all_nodes])
-            # Ströme durch Messwiderstände hinzufügen
-            currents_str = " ".join([f"V{meter.name}_probe#branch" for meter in self.meters if meter.meter_type == "ammeter"])
-            print_str = f"{nodes_str} {currents_str}".strip()
-            f.write(str(circuit))
-            f.write(f"\n.op\n.control\nset noaskquit\nop\nprint {print_str} > {output_file}\nedisplay\n.endc\n.end\n")
-        try:
-            log_message(f"Simuliere Messgeräte mit Netzliste {netlist_file}")
-            process = subprocess.run([ngspice_executable_path, "-b", netlist_file], check=True, text=True, capture_output=True, timeout=30)
-            log_message(f"NGSpice stdout:\n{process.stdout}")
-            log_message(f"NGSpice stderr:\n{process.stderr}")
-            if os.path.exists(output_file):
-                with open(output_file, "r", encoding="utf-8") as f:
-                    content = f.read()
-                    log_message(f"Inhalt von {output_file} für Messgeräte:\n{content}")
-                    values = {}
-                    for line in content.splitlines():
-                        if "=" in line:
-                            key, value = line.split("=")
-                            key = key.strip()
-                            value = float(value.strip())
-                            values[key] = value
-                    for meter in self.meters:
-                        n1 = node_map[meter.terminals[0]]
-                        n2 = node_map[meter.terminals[1]]
-                        v1 = values.get(f"v({n1})", 0.0)
-                        v2 = values.get(f"v({n2})", 0.0)
-                        v_th = abs(v1 - v2)
-                        if meter.meter_type == "voltmeter":
-                            self.canvas.itemconfig(meter.text_id, text=f"{meter.name}\n{v_th:.2f} V")
-                            i_n = v_th / 1e6  # Strom durch 1MΩ
-                            log_message(f"Voltmeter {meter.name}: V_th={v_th:.2f} V")
-                        elif meter.meter_type == "ammeter":
-                            i_n = values.get(f"V{meter.name}_probe#branch", 0.0)  # Direkt den Strom aus NGSpice
-                            self.canvas.itemconfig(meter.text_id, text=f"{meter.name}\n{i_n*1000:.2f} mA")
-                            log_message(f"Ammeter {meter.name}: I_n={i_n:.6e} A")
-                        else:
-                            i_n = 0
-                            log_message(f"Meter {meter.name}: V_th={v_th:.2f} V (general meter)")
-                        results[meter.text_id] = {"V_th": v_th, "I_n": i_n}
-            else:
-                log_message(f"Ausgabedatei {output_file} nicht gefunden für Messgeräte")
-        except subprocess.CalledProcessError as e:
-            log_message(f"Fehler bei Messgeräte-Simulation: {e.stderr}")
-            messagebox.showerror("Simulationsfehler", f"Messgeräte-Simulation fehlgeschlagen:\n{e.stderr}")
-        finally:
-            for fname in [netlist_file, output_file]:
-                if os.path.exists(fname):
-                    os.remove(fname)
-
-    return results
+        return results
 
     def calculate_resistance(self, term1, term2):
         node_map = self.generate_node_map()
