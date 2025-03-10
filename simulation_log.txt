@@ -1,0 +1,633 @@
+[2025-03-09 18:16:12] Netzliste (gespeichert in spannungsteiler_auto.cir):
+.title Spannungsteiler Simulation
+R1 n1 n2 100.0
+R2 n2 0 100.0
+VQ1 n1 0 DC 5.0
+VV1_probe n1 n2 DC 0
+[2025-03-09 18:16:12] Node Map: {'T1': 'n1', 'T2': 'n2', 'T3': '0'}
+[2025-03-09 18:16:12] Simuliere Messgeräte...
+[2025-03-09 18:16:13] NGSpice stdout:
+
+[2025-03-09 18:16:13] NGSpice stderr:
+
+[2025-03-09 18:16:13] Verarbeite Voltmeter V1: Knoten n1 und n2
+[2025-03-09 18:16:13] Spannungswerte für V1 nicht gefunden: v(n1)=None, v(n2)=None
+[2025-03-09 19:22:14] Voltmeter V1 hinzugefügt an Position (700, 400).
+[2025-03-09 19:22:14] Zustand gespeichert für Undo.
+[2025-03-09 19:22:16] Zustand gespeichert für Undo.
+[2025-03-09 19:22:17] Widerstand R1 hinzugefügt.
+[2025-03-09 19:22:17] Zustand gespeichert für Undo.
+[2025-03-09 19:22:17] Widerstand R2 hinzugefügt.
+[2025-03-09 19:22:17] Zustand gespeichert für Undo.
+[2025-03-09 19:22:20] Zustand gespeichert für Undo.
+[2025-03-09 19:22:21] Zustand gespeichert für Undo.
+[2025-03-09 19:22:23] Verbindung zwischen Terminal 8 und 11 erstellt.
+[2025-03-09 19:22:23] Zustand gespeichert für Undo.
+[2025-03-09 19:22:26] Verbindung zwischen Terminal 3 und 7 erstellt.
+[2025-03-09 19:22:26] Zustand gespeichert für Undo.
+[2025-03-09 19:22:28] Verbindung zwischen Terminal 4 und 12 erstellt.
+[2025-03-09 19:22:28] Zustand gespeichert für Undo.
+[2025-03-09 19:22:30] Voltmeter V2 hinzugefügt an Position (700, 500).
+[2025-03-09 19:22:30] Zustand gespeichert für Undo.
+[2025-03-09 19:22:32] Zustand gespeichert für Undo.
+[2025-03-09 19:22:34] Zustand gespeichert für Undo.
+[2025-03-09 19:22:37] Verbindung zwischen Terminal 18 und 11 erstellt.
+[2025-03-09 19:22:37] Zustand gespeichert für Undo.
+[2025-03-09 19:22:39] Verbindung zwischen Terminal 19 und 12 erstellt.
+[2025-03-09 19:22:39] Zustand gespeichert für Undo.
+[2025-03-09 19:22:42] Voltagequelle VQ1 hinzugefügt.
+[2025-03-09 19:22:42] Zustand gespeichert für Undo.
+[2025-03-09 19:22:44] Zustand gespeichert für Undo.
+[2025-03-09 19:22:46] Verbindung zwischen Terminal 24 und 7 erstellt.
+[2025-03-09 19:22:46] Zustand gespeichert für Undo.
+[2025-03-09 19:22:48] Verbindung zwischen Terminal 25 und 19 erstellt.
+[2025-03-09 19:22:48] Zustand gespeichert für Undo.
+[2025-03-09 19:22:50] Ground (GND) hinzugefügt.
+[2025-03-09 19:22:50] Zustand gespeichert für Undo.
+[2025-03-09 19:22:53] Verbindung zwischen Terminal 31 und 25 erstellt.
+[2025-03-09 19:22:53] Zustand gespeichert für Undo.
+[2025-03-09 19:22:55] Simuliere Messgeräte...
+[2025-03-09 19:34:47] Widerstand R1 hinzugefügt.
+[2025-03-09 19:34:47] Zustand gespeichert für Undo.
+[2025-03-09 19:34:48] Widerstand R2 hinzugefügt.
+[2025-03-09 19:34:48] Zustand gespeichert für Undo.
+[2025-03-09 19:34:49] Zustand gespeichert für Undo.
+[2025-03-09 19:34:51] Voltmeter V1 hinzugefügt an Position (700, 400).
+[2025-03-09 19:34:51] Zustand gespeichert für Undo.
+[2025-03-09 19:34:52] Zustand gespeichert für Undo.
+[2025-03-09 19:34:54] Verbindung zwischen Terminal 11 und 7 erstellt.
+[2025-03-09 19:34:54] Zustand gespeichert für Undo.
+[2025-03-09 19:34:56] Verbindung zwischen Terminal 12 und 8 erstellt.
+[2025-03-09 19:34:56] Zustand gespeichert für Undo.
+[2025-03-09 19:35:00] Verbindung zwischen Terminal 7 und 4 erstellt.
+[2025-03-09 19:35:00] Zustand gespeichert für Undo.
+[2025-03-09 19:35:05] Voltagequelle VQ1 hinzugefügt.
+[2025-03-09 19:35:05] Zustand gespeichert für Undo.
+[2025-03-09 19:35:07] Zustand gespeichert für Undo.
+[2025-03-09 19:35:09] Verbindung zwischen Terminal 18 und 3 erstellt.
+[2025-03-09 19:35:09] Zustand gespeichert für Undo.
+[2025-03-09 19:35:11] Verbindung zwischen Terminal 19 und 8 erstellt.
+[2025-03-09 19:35:11] Zustand gespeichert für Undo.
+[2025-03-09 19:35:14] Fehler: Keine Masse (GND) vorhanden.
+[2025-03-09 19:35:15] Ground (GND) hinzugefügt.
+[2025-03-09 19:35:15] Zustand gespeichert für Undo.
+[2025-03-09 19:35:16] Zustand gespeichert für Undo.
+[2025-03-09 19:35:19] Verbindung zwischen Terminal 25 und 12 erstellt.
+[2025-03-09 19:35:19] Zustand gespeichert für Undo.
+[2025-03-09 19:35:20] Simuliere Messgeräte...
+[2025-03-09 19:35:20] NGSpice Ausgabe: 
+[2025-03-09 19:35:20] Inhalt von simulation_results.txt für Messgeräte:
+v(n6) = -1.49497e+00
+v(n3) = -4.95024e-01
+v(n1) = 5.050261e-01
+
+[2025-03-09 19:35:22] Simuliere Messgeräte...
+[2025-03-09 19:35:22] NGSpice Ausgabe: 
+[2025-03-09 19:35:22] Inhalt von simulation_results.txt für Messgeräte:
+v(n6) = -1.49497e+00
+v(n3) = -4.95024e-01
+v(n1) = 5.050261e-01
+
+[2025-03-09 19:35:22] Simuliere Messgeräte...
+[2025-03-09 19:35:22] NGSpice Ausgabe: 
+[2025-03-09 19:35:22] Inhalt von simulation_results.txt für Messgeräte:
+v(n6) = -1.49497e+00
+v(n3) = -4.95024e-01
+v(n1) = 5.050261e-01
+
+[2025-03-09 20:32:44] Widerstand R1 hinzugefügt.
+[2025-03-09 20:32:44] Zustand gespeichert für Undo.
+[2025-03-09 20:32:44] Widerstand R2 hinzugefügt.
+[2025-03-09 20:32:44] Zustand gespeichert für Undo.
+[2025-03-09 20:32:45] Zustand gespeichert für Undo.
+[2025-03-09 20:32:46] Verbindung zwischen Terminal 7 und 4 erstellt.
+[2025-03-09 20:32:46] Zustand gespeichert für Undo.
+[2025-03-09 20:32:49] Ohmmeter Ohm1 hinzugefügt.
+[2025-03-09 20:32:49] Zustand gespeichert für Undo.
+[2025-03-09 20:32:50] Zustand gespeichert für Undo.
+[2025-03-09 20:32:52] Verbindung zwischen Terminal 13 und 8 erstellt.
+[2025-03-09 20:32:52] Zustand gespeichert für Undo.
+[2025-03-09 20:32:54] Verbindung zwischen Terminal 12 und 3 erstellt.
+[2025-03-09 20:32:54] Zustand gespeichert für Undo.
+[2025-03-09 20:32:56] Ground (GND) hinzugefügt.
+[2025-03-09 20:32:56] Zustand gespeichert für Undo.
+[2025-03-09 20:32:58] Zustand gespeichert für Undo.
+[2025-03-09 20:33:00] Zustand gespeichert für Undo.
+[2025-03-09 20:33:03] Verbindung zwischen Terminal 17 und 8 erstellt.
+[2025-03-09 20:33:03] Zustand gespeichert für Undo.
+[2025-03-09 20:33:05] Simuliere Ohmmeter Ohm1...
+[2025-03-09 20:33:06] NGSpice Ausgabe: 
+[2025-03-09 20:33:06] Inhalt von simulation_results.txt für Ohmmeter Ohm1:
+v(n1) = 2.525002e-01
+v(n5) = -7.47500e-01
+
+[2025-03-09 20:33:06] Ohmmeter Ohm1 gemessener Widerstand: infΩ
+[2025-03-09 20:33:08] Simuliere Ohmmeter Ohm1...
+[2025-03-09 20:33:08] NGSpice Ausgabe: 
+[2025-03-09 20:33:08] Inhalt von simulation_results.txt für Ohmmeter Ohm1:
+v(n1) = 2.525002e-01
+v(n5) = -7.47500e-01
+
+[2025-03-09 20:33:08] Ohmmeter Ohm1 gemessener Widerstand: infΩ
+[2025-03-09 20:33:09] Simuliere Ohmmeter Ohm1...
+[2025-03-09 20:33:09] NGSpice Ausgabe: 
+[2025-03-09 20:33:09] Inhalt von simulation_results.txt für Ohmmeter Ohm1:
+v(n1) = 2.525002e-01
+v(n5) = -7.47500e-01
+
+[2025-03-09 20:33:09] Ohmmeter Ohm1 gemessener Widerstand: infΩ
+[2025-03-09 20:33:13] Voltmeter V1 hinzugefügt an Position (700, 400).
+[2025-03-09 20:33:13] Zustand gespeichert für Undo.
+[2025-03-09 20:33:14] Zustand gespeichert für Undo.
+[2025-03-09 20:33:16] Verbindung zwischen Terminal 23 und 7 erstellt.
+[2025-03-09 20:33:16] Zustand gespeichert für Undo.
+[2025-03-09 20:33:21] Verbindung zwischen Terminal 24 und 8 erstellt.
+[2025-03-09 20:33:21] Zustand gespeichert für Undo.
+[2025-03-09 20:33:26] Voltagequelle VQ1 hinzugefügt.
+[2025-03-09 20:33:26] Zustand gespeichert für Undo.
+[2025-03-09 20:33:28] Zustand gespeichert für Undo.
+[2025-03-09 20:33:30] Verbindung zwischen Terminal 30 und 13 erstellt.
+[2025-03-09 20:33:30] Zustand gespeichert für Undo.
+[2025-03-09 20:33:32] Verbindung zwischen Terminal 29 und 12 erstellt.
+[2025-03-09 20:33:32] Zustand gespeichert für Undo.
+[2025-03-09 20:33:33] Simuliere Ohmmeter Ohm1...
+[2025-03-09 20:33:34] NGSpice Ausgabe: 
+[2025-03-09 20:33:34] Inhalt von simulation_results.txt für Ohmmeter Ohm1:
+v(n1) = 1.000266e+12
+v(n7) = 1.000266e+12
+
+[2025-03-09 20:33:34] Ohmmeter Ohm1 gemessener Widerstand: infΩ
+[2025-03-09 20:33:34] Simuliere Messgeräte...
+[2025-03-09 20:33:35] NGSpice Ausgabe: 
+[2025-03-09 20:33:35] Inhalt von simulation_results.txt für Messgeräte:
+v(n7) = 2.499875e-05
+v(n1) = 1.000025e+00
+v(n4) = 5.000000e-01
+
+[2025-03-09 20:33:36] Simuliere Ohmmeter Ohm1...
+[2025-03-09 20:33:37] NGSpice Ausgabe: 
+[2025-03-09 20:33:37] Inhalt von simulation_results.txt für Ohmmeter Ohm1:
+v(n1) = 1.000266e+12
+v(n7) = 1.000266e+12
+
+[2025-03-09 20:33:37] Ohmmeter Ohm1 gemessener Widerstand: infΩ
+[2025-03-09 20:33:37] Simuliere Messgeräte...
+[2025-03-09 20:33:37] NGSpice Ausgabe: 
+[2025-03-09 20:33:37] Inhalt von simulation_results.txt für Messgeräte:
+v(n7) = 2.499875e-05
+v(n1) = 1.000025e+00
+v(n4) = 5.000000e-01
+
+[2025-03-09 21:32:06] Widerstand R1 hinzugefügt.
+[2025-03-09 21:32:06] Zustand gespeichert für Undo.
+[2025-03-09 21:32:06] Widerstand R2 hinzugefügt.
+[2025-03-09 21:32:06] Zustand gespeichert für Undo.
+[2025-03-09 21:32:07] Zustand gespeichert für Undo.
+[2025-03-09 21:32:12] Verbindung zwischen Terminal 7 und 4 erstellt.
+[2025-03-09 21:32:12] Zustand gespeichert für Undo.
+[2025-03-09 21:32:17] Voltagequelle VQ1 hinzugefügt.
+[2025-03-09 21:32:17] Zustand gespeichert für Undo.
+[2025-03-09 21:32:20] Zustand gespeichert für Undo.
+[2025-03-09 21:32:22] Verbindung zwischen Terminal 12 und 3 erstellt.
+[2025-03-09 21:32:22] Zustand gespeichert für Undo.
+[2025-03-09 21:32:24] Verbindung zwischen Terminal 13 und 8 erstellt.
+[2025-03-09 21:32:24] Zustand gespeichert für Undo.
+[2025-03-09 21:32:28] Voltmeter V1 hinzugefügt an Position (700, 400).
+[2025-03-09 21:32:28] Zustand gespeichert für Undo.
+[2025-03-09 21:32:30] Zustand gespeichert für Undo.
+[2025-03-09 21:32:33] Verbindung zwischen Terminal 20 und 3 erstellt.
+[2025-03-09 21:32:33] Zustand gespeichert für Undo.
+[2025-03-09 21:32:37] Verbindung zwischen Terminal 21 und 4 erstellt.
+[2025-03-09 21:32:37] Zustand gespeichert für Undo.
+[2025-03-09 21:32:38] Ground (GND) hinzugefügt.
+[2025-03-09 21:32:38] Zustand gespeichert für Undo.
+[2025-03-09 21:32:41] Zustand gespeichert für Undo.
+[2025-03-09 21:32:41] Zustand gespeichert für Undo.
+[2025-03-09 21:32:46] Verbindung zwischen Terminal 25 und 8 erstellt.
+[2025-03-09 21:32:46] Zustand gespeichert für Undo.
+[2025-03-09 21:32:49] Generated SPICE netlist:
+.title Schaltkreis Simulation
+RR1 N1 N4 100.0Ohm
+RR2 N4 N7 100.0Ohm
+VVQ1 N1 N7 1.0V
+RV1_probe N1 N4 1000000.0Ohm
+
+[2025-03-09 21:32:49] Node map: {3: 'N1', 12: 'N1', 20: 'N1', 4: 'N4', 21: 'N4', 7: 'N4', 8: 'N7', 25: '0', 13: 'N7'}
+[2025-03-09 21:32:49] Simuliere Messgeräte mit Netzliste temp_simulation.cir
+[2025-03-09 21:32:50] NGSpice stdout:
+
+[2025-03-09 21:32:50] NGSpice stderr:
+
+[2025-03-09 21:32:50] Inhalt von simulation_results.txt für Messgeräte:
+v(n7) = -1.00000e+00
+v(n1) = 0.000000e+00
+v(n4) = -4.99975e-01
+
+[2025-03-09 21:32:50] Voltmeter V1: V_th=0.000000e+00 V, I_n=0.000000e+00 A
+[2025-03-09 21:32:52] Simulation erfolgreich abgeschlossen.
+[2025-03-09 21:33:38] Zustand gespeichert für Undo.
+[2025-03-09 21:33:47] Zustand gespeichert für Undo.
+[2025-03-09 21:33:50] Generated SPICE netlist:
+.title Schaltkreis Simulation
+RR1 N1 N4 100.0Ohm
+RR2 N4 N7 100.0Ohm
+VVQ11 N1 N7 1.0V
+RV1_probe N1 N4 1000000.0Ohm
+
+[2025-03-09 21:33:50] Node map: {3: 'N1', 12: 'N1', 20: 'N1', 4: 'N4', 21: 'N4', 7: 'N4', 8: 'N7', 25: '0', 13: 'N7'}
+[2025-03-09 21:33:50] Simuliere Messgeräte mit Netzliste temp_simulation.cir
+[2025-03-09 21:33:50] NGSpice stdout:
+
+[2025-03-09 21:33:50] NGSpice stderr:
+
+[2025-03-09 21:33:50] Inhalt von simulation_results.txt für Messgeräte:
+v(n7) = -1.00000e+00
+v(n1) = 0.000000e+00
+v(n4) = -4.99975e-01
+
+[2025-03-09 21:33:50] Voltmeter V1: V_th=0.000000e+00 V, I_n=0.000000e+00 A
+[2025-03-09 21:33:52] Simulation erfolgreich abgeschlossen.
+[2025-03-09 22:01:56] Widerstand R1 hinzugefügt.
+[2025-03-09 22:01:56] Zustand gespeichert für Undo.
+[2025-03-09 22:01:56] Widerstand R2 hinzugefügt.
+[2025-03-09 22:01:56] Zustand gespeichert für Undo.
+[2025-03-09 22:01:58] Zustand gespeichert für Undo.
+[2025-03-09 22:02:00] Voltagequelle VQ1 hinzugefügt.
+[2025-03-09 22:02:00] Zustand gespeichert für Undo.
+[2025-03-09 22:02:02] Zustand gespeichert für Undo.
+[2025-03-09 22:02:03] Verbindung zwischen Terminal 11 und 3 erstellt.
+[2025-03-09 22:02:03] Zustand gespeichert für Undo.
+[2025-03-09 22:02:05] Verbindung zwischen Terminal 12 und 8 erstellt.
+[2025-03-09 22:02:05] Zustand gespeichert für Undo.
+[2025-03-09 22:02:10] Ammeter A1 hinzugefügt an Position (700, 400).
+[2025-03-09 22:02:10] Zustand gespeichert für Undo.
+[2025-03-09 22:02:11] Zustand gespeichert für Undo.
+[2025-03-09 22:02:14] Verbindung zwischen Terminal 19 und 4 erstellt.
+[2025-03-09 22:02:14] Zustand gespeichert für Undo.
+[2025-03-09 22:02:16] Verbindung zwischen Terminal 7 und 20 erstellt.
+[2025-03-09 22:02:16] Zustand gespeichert für Undo.
+[2025-03-09 22:02:18] Voltmeter V2 hinzugefügt an Position (700, 500).
+[2025-03-09 22:02:18] Zustand gespeichert für Undo.
+[2025-03-09 22:02:20] Zustand gespeichert für Undo.
+[2025-03-09 22:02:23] Verbindung zwischen Terminal 25 und 3 erstellt.
+[2025-03-09 22:02:23] Zustand gespeichert für Undo.
+[2025-03-09 22:02:26] Verbindung zwischen Terminal 26 und 19 erstellt.
+[2025-03-09 22:02:26] Zustand gespeichert für Undo.
+[2025-03-09 22:02:28] Ground (GND) hinzugefügt.
+[2025-03-09 22:02:28] Zustand gespeichert für Undo.
+[2025-03-09 22:02:31] Zustand gespeichert für Undo.
+[2025-03-09 22:02:33] Zustand gespeichert für Undo.
+[2025-03-09 22:02:37] Verbindung zwischen Terminal 8 und 30 erstellt.
+[2025-03-09 22:02:37] Zustand gespeichert für Undo.
+[2025-03-09 22:02:38] Generated SPICE netlist:
+.title Schaltkreis Simulation
+RR1 N1 N4 100.0Ohm
+RR2 N7 N9 100.0Ohm
+VVQ1 N1 N9 2.0V
+RA1_probe N4 N7 1e-06Ohm
+RV2_probe N1 N4 1000000.0Ohm
+
+[2025-03-09 22:02:38] Node map: {11: 'N1', 25: 'N1', 3: 'N1', 26: 'N4', 19: 'N4', 4: 'N4', 20: 'N7', 7: 'N7', 8: 'N9', 12: 'N9', 30: '0'}
+[2025-03-09 22:02:38] Simuliere Messgeräte mit Netzliste temp_simulation.cir
+[2025-03-09 22:02:39] NGSpice stdout:
+
+[2025-03-09 22:02:39] NGSpice stderr:
+
+[2025-03-09 22:02:39] Inhalt von simulation_results.txt für Messgeräte:
+v(n9) = -1.00005e+00
+v(n4) = 3.254955e-08
+v(n7) = 2.254905e-08
+v(n1) = 9.999500e-01
+
+[2025-03-09 22:02:39] Ammeter A1: V_th=0.000000e+00 V, I_n=0.000000e+00 A
+[2025-03-09 22:02:39] Voltmeter V2: V_th=0.000000e+00 V, I_n=0.000000e+00 A
+[2025-03-09 22:02:40] Simulation erfolgreich abgeschlossen.
+[2025-03-09 22:02:45] Zustand gespeichert für Undo.
+[2025-03-09 22:02:45] Generated SPICE netlist:
+.title Schaltkreis Simulation
+RR1 N1 N4 100.0Ohm
+RR2 N7 N9 100.0Ohm
+VVQ1 N1 N9 2.0V
+RA1_probe N4 N7 1e-06Ohm
+RV2_probe N1 N4 1000000.0Ohm
+
+[2025-03-09 22:02:45] Node map: {11: 'N1', 25: 'N1', 3: 'N1', 26: 'N4', 19: 'N4', 4: 'N4', 20: 'N7', 7: 'N7', 8: 'N9', 12: 'N9', 30: '0'}
+[2025-03-09 22:02:45] Simuliere Messgeräte mit Netzliste temp_simulation.cir
+[2025-03-09 22:02:45] NGSpice stdout:
+
+[2025-03-09 22:02:45] NGSpice stderr:
+
+[2025-03-09 22:02:45] Inhalt von simulation_results.txt für Messgeräte:
+v(n9) = -1.00005e+00
+v(n4) = 3.254955e-08
+v(n7) = 2.254905e-08
+v(n1) = 9.999500e-01
+
+[2025-03-09 22:02:45] Ammeter A1: V_th=0.000000e+00 V, I_n=0.000000e+00 A
+[2025-03-09 22:02:45] Voltmeter V2: V_th=0.000000e+00 V, I_n=0.000000e+00 A
+[2025-03-09 22:02:47] Zustand gespeichert für Undo.
+[2025-03-09 22:02:48] Ground (GND) hinzugefügt.
+[2025-03-09 22:02:48] Zustand gespeichert für Undo.
+[2025-03-09 22:02:51] Zustand gespeichert für Undo.
+[2025-03-09 22:02:53] Zustand gespeichert für Undo.
+[2025-03-09 22:02:55] Verbindung zwischen Terminal 35 und 8 erstellt.
+[2025-03-09 22:02:55] Zustand gespeichert für Undo.
+[2025-03-09 22:02:57] Generated SPICE netlist:
+.title Schaltkreis Simulation
+RR1 N1 N4 100.0Ohm
+RR2 N11 N7 100.0Ohm
+VVQ1 N1 N7 2.0V
+RA1_probe N4 N11 1e-06Ohm
+RV2_probe N1 N4 1000000.0Ohm
+
+[2025-03-09 22:02:57] Node map: {11: 'N1', 25: 'N1', 3: 'N1', 26: 'N4', 19: 'N4', 4: 'N4', 8: 'N7', 35: 'N7', 12: 'N7', 30: '0', 20: 'N11', 7: 'N11'}
+[2025-03-09 22:02:57] Simuliere Messgeräte mit Netzliste temp_simulation.cir
+[2025-03-09 22:02:57] NGSpice stdout:
+
+[2025-03-09 22:02:57] NGSpice stderr:
+
+[2025-03-09 22:02:57] Inhalt von simulation_results.txt für Messgeräte:
+v(n11) = 2.254905e-08
+v(n4) = 3.254955e-08
+v(n7) = -1.00005e+00
+v(n1) = 9.999500e-01
+
+[2025-03-09 22:02:57] Ammeter A1: V_th=0.000000e+00 V, I_n=0.000000e+00 A
+[2025-03-09 22:02:57] Voltmeter V2: V_th=0.000000e+00 V, I_n=0.000000e+00 A
+[2025-03-09 22:02:59] Simulation erfolgreich abgeschlossen.
+[2025-03-09 22:03:00] Zustand gespeichert für Undo.
+[2025-03-09 22:03:00] Generated SPICE netlist:
+.title Schaltkreis Simulation
+RR1 N1 N4 100.0Ohm
+RR2 N11 N7 100.0Ohm
+VVQ1 N1 N7 2.0V
+RA1_probe N4 N11 1e-06Ohm
+RV2_probe N1 N4 1000000.0Ohm
+
+[2025-03-09 22:03:00] Node map: {11: 'N1', 25: 'N1', 3: 'N1', 26: 'N4', 19: 'N4', 4: 'N4', 8: 'N7', 35: 'N7', 12: 'N7', 30: '0', 20: 'N11', 7: 'N11'}
+[2025-03-09 22:03:00] Simuliere Messgeräte mit Netzliste temp_simulation.cir
+[2025-03-09 22:03:00] NGSpice stdout:
+
+[2025-03-09 22:03:00] NGSpice stderr:
+
+[2025-03-09 22:03:00] Inhalt von simulation_results.txt für Messgeräte:
+v(n11) = 2.254905e-08
+v(n4) = 3.254955e-08
+v(n7) = -1.00005e+00
+v(n1) = 9.999500e-01
+
+[2025-03-09 22:03:00] Ammeter A1: V_th=0.000000e+00 V, I_n=0.000000e+00 A
+[2025-03-09 22:03:00] Voltmeter V2: V_th=0.000000e+00 V, I_n=0.000000e+00 A
+[2025-03-09 22:03:00] Zustand gespeichert für Undo.
+[2025-03-09 22:03:01] Zustand gespeichert für Undo.
+[2025-03-09 22:03:01] Generated SPICE netlist:
+.title Schaltkreis Simulation
+RR1 N1 N4 100.0Ohm
+RR2 N11 N7 100.0Ohm
+VVQ1 N1 N7 2.0V
+RA1_probe N4 N11 1e-06Ohm
+RV2_probe N1 N4 1000000.0Ohm
+
+[2025-03-09 22:03:01] Node map: {11: 'N1', 25: 'N1', 3: 'N1', 26: 'N4', 19: 'N4', 4: 'N4', 8: 'N7', 35: 'N7', 12: 'N7', 30: '0', 20: 'N11', 7: 'N11'}
+[2025-03-09 22:03:01] Simuliere Messgeräte mit Netzliste temp_simulation.cir
+[2025-03-09 22:03:01] NGSpice stdout:
+
+[2025-03-09 22:03:01] NGSpice stderr:
+
+[2025-03-09 22:03:01] Inhalt von simulation_results.txt für Messgeräte:
+v(n11) = 2.254905e-08
+v(n4) = 3.254955e-08
+v(n7) = -1.00005e+00
+v(n1) = 9.999500e-01
+
+[2025-03-09 22:03:01] Ammeter A1: V_th=0.000000e+00 V, I_n=0.000000e+00 A
+[2025-03-09 22:03:01] Voltmeter V2: V_th=0.000000e+00 V, I_n=0.000000e+00 A
+[2025-03-09 22:03:01] Zustand gespeichert für Undo.
+[2025-03-09 22:15:51] Widerstand R1 hinzugefügt.
+[2025-03-09 22:15:51] Zustand gespeichert für Undo.
+[2025-03-09 22:15:51] Widerstand R2 hinzugefügt.
+[2025-03-09 22:15:51] Zustand gespeichert für Undo.
+[2025-03-09 22:15:53] Zustand gespeichert für Undo.
+[2025-03-09 22:15:54] Verbindung zwischen Terminal 7 und 4 erstellt.
+[2025-03-09 22:15:54] Zustand gespeichert für Undo.
+[2025-03-09 22:15:59] Voltagequelle VQ1 hinzugefügt.
+[2025-03-09 22:15:59] Zustand gespeichert für Undo.
+[2025-03-09 22:16:00] Zustand gespeichert für Undo.
+[2025-03-09 22:16:02] Verbindung zwischen Terminal 12 und 3 erstellt.
+[2025-03-09 22:16:02] Zustand gespeichert für Undo.
+[2025-03-09 22:16:04] Verbindung zwischen Terminal 13 und 8 erstellt.
+[2025-03-09 22:16:04] Zustand gespeichert für Undo.
+[2025-03-09 22:16:06] Voltmeter V1 hinzugefügt an Position (700, 400).
+[2025-03-09 22:16:06] Zustand gespeichert für Undo.
+[2025-03-09 22:16:08] Zustand gespeichert für Undo.
+[2025-03-09 22:16:10] Verbindung zwischen Terminal 21 und 4 erstellt.
+[2025-03-09 22:16:10] Zustand gespeichert für Undo.
+[2025-03-09 22:16:12] Verbindung zwischen Terminal 20 und 3 erstellt.
+[2025-03-09 22:16:12] Zustand gespeichert für Undo.
+[2025-03-09 22:16:13] Ground (GND) hinzugefügt.
+[2025-03-09 22:16:13] Zustand gespeichert für Undo.
+[2025-03-09 22:16:15] Zustand gespeichert für Undo.
+[2025-03-09 22:16:19] Verbindung zwischen Terminal 25 und 8 erstellt.
+[2025-03-09 22:16:19] Zustand gespeichert für Undo.
+[2025-03-09 22:16:22] Generated SPICE netlist:
+.title Schaltkreis Simulation
+RR1 N1 N4 100.0Ohm
+RR2 N4 N7 100.0Ohm
+VVQ1 N1 N7 10.0V
+RV1_probe N1 N4 1000000.0Ohm
+
+[2025-03-09 22:16:22] Node map: {3: 'N1', 12: 'N1', 20: 'N1', 4: 'N4', 21: 'N4', 7: 'N4', 8: 'N7', 25: '0', 13: 'N7'}
+[2025-03-09 22:16:22] Simuliere Messgeräte mit Netzliste temp_simulation.cir
+[2025-03-09 22:16:22] NGSpice stdout:
+
+[2025-03-09 22:16:22] NGSpice stderr:
+
+[2025-03-09 22:16:22] Inhalt von simulation_results.txt für Messgeräte:
+v(n1) = 0.000000e+00
+v(n7) = -1.00000e+01
+v(n4) = -4.99975e+00
+
+[2025-03-09 22:16:22] Voltmeter V1: V_th=0.000000e+00 V, I_n=0.000000e+00 A
+[2025-03-09 22:16:24] Simulation erfolgreich abgeschlossen.
+[2025-03-09 22:16:55] Generated SPICE netlist:
+.title Schaltkreis Simulation
+RR1 N1 N4 100.0Ohm
+RR2 N4 N7 100.0Ohm
+VVQ1 N1 N7 10.0V
+RV1_probe N1 N4 1000000.0Ohm
+
+[2025-03-09 22:16:55] Node map: {3: 'N1', 12: 'N1', 20: 'N1', 4: 'N4', 21: 'N4', 7: 'N4', 8: 'N7', 25: '0', 13: 'N7'}
+[2025-03-09 22:16:55] Simuliere Messgeräte mit Netzliste temp_simulation.cir
+[2025-03-09 22:16:55] NGSpice stdout:
+
+[2025-03-09 22:16:55] NGSpice stderr:
+
+[2025-03-09 22:16:55] Inhalt von simulation_results.txt für Messgeräte:
+v(n1) = 0.000000e+00
+v(n7) = -1.00000e+01
+v(n4) = -4.99975e+00
+
+[2025-03-09 22:16:55] Voltmeter V1: V_th=0.000000e+00 V, I_n=0.000000e+00 A
+[2025-03-09 22:21:27] Widerstand R1 hinzugefügt.
+[2025-03-09 22:21:27] Zustand gespeichert für Undo.
+[2025-03-09 22:21:28] Widerstand R2 hinzugefügt.
+[2025-03-09 22:21:28] Zustand gespeichert für Undo.
+[2025-03-09 22:21:30] Zustand gespeichert für Undo.
+[2025-03-09 22:21:31] Verbindung zwischen Terminal 7 und 4 erstellt.
+[2025-03-09 22:21:31] Zustand gespeichert für Undo.
+[2025-03-09 22:21:36] Voltagequelle VQ1 hinzugefügt.
+[2025-03-09 22:21:36] Zustand gespeichert für Undo.
+[2025-03-09 22:21:37] Zustand gespeichert für Undo.
+[2025-03-09 22:21:40] Verbindung zwischen Terminal 12 und 3 erstellt.
+[2025-03-09 22:21:40] Zustand gespeichert für Undo.
+[2025-03-09 22:21:41] Verbindung zwischen Terminal 13 und 8 erstellt.
+[2025-03-09 22:21:41] Zustand gespeichert für Undo.
+[2025-03-09 22:21:44] Voltmeter V1 hinzugefügt an Position (700, 400).
+[2025-03-09 22:21:44] Zustand gespeichert für Undo.
+[2025-03-09 22:21:45] Zustand gespeichert für Undo.
+[2025-03-09 22:21:48] Verbindung zwischen Terminal 20 und 3 erstellt.
+[2025-03-09 22:21:48] Zustand gespeichert für Undo.
+[2025-03-09 22:21:53] Verbindung zwischen Terminal 4 und 21 erstellt.
+[2025-03-09 22:21:53] Zustand gespeichert für Undo.
+[2025-03-09 22:21:55] Ground (GND) hinzugefügt.
+[2025-03-09 22:21:55] Zustand gespeichert für Undo.
+[2025-03-09 22:21:58] Verbindung zwischen Terminal 25 und 8 erstellt.
+[2025-03-09 22:21:58] Zustand gespeichert für Undo.
+[2025-03-09 22:21:59] Generated SPICE netlist:
+.title Schaltkreis Simulation
+RR1 N1 N4 100.0Ohm
+RR2 N4 N7 100.0Ohm
+VVQ1 N1 N7 10.0V
+RV1_probe N1 N4 1000000.0Ohm
+
+[2025-03-09 22:21:59] Node map: {3: 'N1', 12: 'N1', 20: 'N1', 4: 'N4', 21: 'N4', 7: 'N4', 8: 'N7', 25: '0', 13: 'N7'}
+[2025-03-09 22:21:59] Simuliere Messgeräte mit Netzliste temp_simulation.cir
+[2025-03-09 22:21:59] NGSpice stdout:
+
+[2025-03-09 22:21:59] NGSpice stderr:
+
+[2025-03-09 22:21:59] Inhalt von simulation_results.txt für Messgeräte:
+v(n7) = -1.00000e+01
+v(n4) = -4.99975e+00
+v(n1) = 0.000000e+00
+
+[2025-03-09 22:21:59] Voltmeter V1: V_th=0.000000e+00 V, I_n=0.000000e+00 A
+[2025-03-09 22:22:01] Simulation erfolgreich abgeschlossen.
+[2025-03-09 22:36:01] Widerstand R1 hinzugefügt.
+[2025-03-09 22:36:01] Zustand gespeichert für Undo.
+[2025-03-09 22:36:02] Widerstand R2 hinzugefügt.
+[2025-03-09 22:36:02] Zustand gespeichert für Undo.
+[2025-03-09 22:36:03] Zustand gespeichert für Undo.
+[2025-03-09 22:36:05] Verbindung zwischen Terminal 7 und 4 erstellt.
+[2025-03-09 22:36:05] Zustand gespeichert für Undo.
+[2025-03-09 22:36:10] Currentquelle IQ1 hinzugefügt.
+[2025-03-09 22:36:10] Zustand gespeichert für Undo.
+[2025-03-09 22:36:12] Zustand gespeichert für Undo.
+[2025-03-09 22:36:13] Verbindung zwischen Terminal 12 und 3 erstellt.
+[2025-03-09 22:36:13] Zustand gespeichert für Undo.
+[2025-03-09 22:36:15] Verbindung zwischen Terminal 13 und 4 erstellt.
+[2025-03-09 22:36:15] Zustand gespeichert für Undo.
+[2025-03-09 22:36:27] Ammeter A1 hinzugefügt an Position (700, 400).
+[2025-03-09 22:36:27] Zustand gespeichert für Undo.
+[2025-03-09 22:36:29] Zustand gespeichert für Undo.
+[2025-03-09 22:36:31] Verbindung zwischen Terminal 18 und 3 erstellt.
+[2025-03-09 22:36:31] Zustand gespeichert für Undo.
+[2025-03-09 22:36:34] Verbindung zwischen Terminal 19 und 8 erstellt.
+[2025-03-09 22:36:34] Zustand gespeichert für Undo.
+[2025-03-09 22:36:35] Ground (GND) hinzugefügt.
+[2025-03-09 22:36:35] Zustand gespeichert für Undo.
+[2025-03-09 22:36:38] Zustand gespeichert für Undo.
+[2025-03-09 22:36:39] Zustand gespeichert für Undo.
+[2025-03-09 22:36:45] Verbindung zwischen Terminal 13 und 23 erstellt.
+[2025-03-09 22:36:45] Zustand gespeichert für Undo.
+[2025-03-09 22:36:46] Generated SPICE netlist:
+.title Schaltkreis Simulation
+RR1 N1 N4 100.0Ohm
+RR2 N4 N8 100.0Ohm
+IIQ1 N1 N4 1.0A
+RA1_probe N1 N8 1e-06Ohm
+
+[2025-03-09 22:36:46] Node map: {18: 'N1', 3: 'N1', 12: 'N1', 23: '0', 4: 'N4', 13: 'N4', 7: 'N4', 8: 'N8', 19: 'N8'}
+[2025-03-09 22:36:46] Simuliere Messgeräte mit Netzliste temp_simulation.cir
+[2025-03-09 22:36:46] NGSpice stdout:
+
+[2025-03-09 22:36:46] NGSpice stderr:
+
+[2025-03-09 22:36:46] Inhalt von simulation_results.txt für Messgeräte:
+v(n4) = 5.000000e-17
+v(n1) = -1.89002e-24
+v(n8) = -1.39002e-24
+
+[2025-03-09 22:36:46] Ammeter A1: I_n=0.000000e+00 A
+[2025-03-09 22:36:48] Simulation erfolgreich abgeschlossen.
+[2025-03-10 10:42:51] Widerstand R1 hinzugefügt.
+[2025-03-10 10:42:51] Zustand gespeichert für Undo.
+[2025-03-10 10:42:51] Widerstand R2 hinzugefügt.
+[2025-03-10 10:42:51] Zustand gespeichert für Undo.
+[2025-03-10 10:42:54] Zustand gespeichert für Undo.
+[2025-03-10 10:42:55] Verbindung zwischen Terminal 5 und 4 erstellt.
+[2025-03-10 10:42:55] Zustand gespeichert für Undo.
+[2025-03-10 10:42:56] Undo ausgeführt.
+[2025-03-10 10:42:58] Verbindung zwischen Terminal 17 und 24 erstellt.
+[2025-03-10 10:42:58] Zustand gespeichert für Undo.
+[2025-03-10 10:43:03] Voltagequelle VQ1 hinzugefügt.
+[2025-03-10 10:43:03] Zustand gespeichert für Undo.
+[2025-03-10 10:43:04] Zustand gespeichert für Undo.
+[2025-03-10 10:43:06] Verbindung zwischen Terminal 29 und 16 erstellt.
+[2025-03-10 10:43:06] Zustand gespeichert für Undo.
+[2025-03-10 10:43:08] Verbindung zwischen Terminal 30 und 25 erstellt.
+[2025-03-10 10:43:08] Zustand gespeichert für Undo.
+[2025-03-10 10:43:17] Voltmeter V1 hinzugefügt an Position (700, 400).
+[2025-03-10 10:43:17] Zustand gespeichert für Undo.
+[2025-03-10 10:43:18] Zustand gespeichert für Undo.
+[2025-03-10 10:43:20] Verbindung zwischen Terminal 37 und 24 erstellt.
+[2025-03-10 10:43:20] Zustand gespeichert für Undo.
+[2025-03-10 10:43:22] Verbindung zwischen Terminal 38 und 25 erstellt.
+[2025-03-10 10:43:22] Zustand gespeichert für Undo.
+[2025-03-10 10:43:23] Ground (GND) hinzugefügt.
+[2025-03-10 10:43:23] Zustand gespeichert für Undo.
+[2025-03-10 10:43:25] Zustand gespeichert für Undo.
+[2025-03-10 10:43:27] Zustand gespeichert für Undo.
+[2025-03-10 10:43:32] Verbindung zwischen Terminal 42 und 38 erstellt.
+[2025-03-10 10:43:32] Zustand gespeichert für Undo.
+[2025-03-10 10:43:33] Generated SPICE netlist:
+.title Schaltkreis Simulation
+RR1 N8 N1 100.0Ohm
+RR2 N1 N4 100.0Ohm
+VVQ1 N8 N4 2.0V
+RV1_probe N1 N4 1000000.0Ohm
+
+[2025-03-10 10:43:33] Node map: {24: 'N1', 17: 'N1', 37: 'N1', 25: 'N4', 42: '0', 38: 'N4', 30: 'N4', 16: 'N8', 29: 'N8'}
+[2025-03-10 10:43:33] Simuliere Messgeräte mit Netzliste temp_simulation.cir
+[2025-03-10 10:43:33] NGSpice stdout:
+
+[2025-03-10 10:43:33] NGSpice stderr:
+
+[2025-03-10 10:43:33] Inhalt von simulation_results.txt für Messgeräte:
+v(n1) = -4.95024e-01
+v(n4) = -1.49497e+00
+v(n8) = 5.050261e-01
+
+[2025-03-10 10:43:33] Voltmeter V1: V_th=0.00 V
+[2025-03-10 10:43:35] Simulation erfolgreich abgeschlossen.
+[2025-03-10 10:43:37] Zustand gespeichert für Undo.
+[2025-03-10 10:43:39] Generated SPICE netlist:
+.title Schaltkreis Simulation
+RR1 N8 N1 100.0Ohm
+RR2 N1 N4 100.0Ohm
+VVQ1 N8 N4 2.0V
+RV1_probe N1 N4 1000000.0Ohm
+
+[2025-03-10 10:43:39] Node map: {24: 'N1', 17: 'N1', 37: 'N1', 25: 'N4', 42: '0', 38: 'N4', 30: 'N4', 16: 'N8', 29: 'N8'}
+[2025-03-10 10:43:39] Simuliere Messgeräte mit Netzliste temp_simulation.cir
+[2025-03-10 10:43:39] NGSpice stdout:
+
+[2025-03-10 10:43:39] NGSpice stderr:
+
+[2025-03-10 10:43:39] Inhalt von simulation_results.txt für Messgeräte:
+v(n1) = -4.95024e-01
+v(n4) = -1.49497e+00
+v(n8) = 5.050261e-01
+
+[2025-03-10 10:43:39] Voltmeter V1: V_th=0.00 V
+[2025-03-10 10:43:40] Simulation erfolgreich abgeschlossen.
